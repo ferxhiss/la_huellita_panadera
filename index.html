@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La Huellita Panadera</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff4e8;
+            color: #4a3328;
+        }
+
+        #principal {
+            width: 900px;
+            margin: 25px auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fffaf5;
+            padding: 20px;
+            border-bottom: 3px solid #eb96df;
+        }
+
+        #logo .titulo {
+            font-size: 30px;
+            color: #130014;
+            font-weight: bold;
+        }
+
+        #logo .sub-titulo {
+            font-size: 14px;
+            color: #0f0011;
+            margin-top: 7px;
+        }
+
+        .menu {
+            background-color: #df9bd9;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 12px;
+            display: block;
+            font-size: 13px;
+        }
+
+        .menu a:hover {
+            background-color: #c47a44;
+        }
+
+        #slide {
+            height: 250px;
+            background: linear-gradient(
+                135deg,
+                #e7c5dc,
+                #e5e2e5,
+                #d5b2d8
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        #slide h2 {
+            font-size: 38px;
+            color: rgb(15, 0, 0);
+            text-shadow: 2px 2px 4px #6d4936;
+        }
+
+        #slide p {
+            color: rgb(15, 0, 0);
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        #categorias {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .uno {
+            width: 290px;
+            background-color: white;
+            border: 1px solid #e4c7ad;
+            padding: 20px;
+            text-align: center;
+            min-height: 350px;
+        }
+
+        .icono {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #f2d2b5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px auto;
+            font-size: 35px;
+        }
+
+        .uno h2 {
+            color: #a9633b;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .parrafo {
+            font-size: 13px;
+            color: #5e514b;
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .leer-mas {
+            display: inline-block;
+            padding: 7px 15px;
+            border: 1px solid #8b5e3c;
+            color: #8b5e3c;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .leer-mas:hover {
+            background-color: #8b5e3c;
+            color: white;
+        }
+        #menu {
+            background-color: white;
+            border: 1px solid #e4c7ad;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        #menu h2 {
+            text-align: center;
+            color: #8b5e3c;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-menu {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .categoria-menu {
+            width: 48%;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 20px;
+            padding: 18px;
+            background-color: #fff8f1;
+            border: 1px solid #ead6c2;
+        }
+
+        .categoria-menu h3 {
+            color: #4a42b8;
+            font-size: 19px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e3c5aa;
+            padding-bottom: 8px;
+        }
+
+        .producto {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0;
+            border-bottom: 1px dotted #d5b9a2;
+            font-size: 13px;
+        }
+
+        .precio {
+            font-weight: bold;
+            color: #8b5e3c;
+        }
+
+        #galeria {
+    background-color: white;
+    border: 1px solid #d9a9d4;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+#galeria h2 {
+    text-align: center;
+    color: #8b5e96;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitulo-galeria {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.galeria-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.foto-producto {
+    width: 31%;
+    background-color: #faf0fa;
+    border: 1px solid #d9b4d6;
+    padding: 10px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.foto-producto img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.foto-producto h3 {
+    color: #934d99;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.foto-producto p {
+    color: #75417d;
+    font-weight: bold;
+    font-size: 14px;
+}
+        #info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #izq {
+            width: 590px;
+            background-color: white;
+            border: 1px solid #e4c7ad;
+            padding: 25px;
+        }
+
+        #izq h2 {
+            color: #8b5e3c;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .adn {
+            margin-bottom: 20px;
+        }
+
+        .adn h3 {
+            color: #b86f42;
+            margin-bottom: 7px;
+        }
+
+
+        #der {
+            width: 290px;
+            background-color: white;
+            border: 1px solid #e4c7ad;
+            padding: 20px;
+        }
+
+        #der h2 {
+            color: #8b5e3c;
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .video-box {
+            height: 210px;
+            background-color: #f0dfd0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .video-box p {
+            font-size: 13px;
+            color: #c99ab4;
+        }
+
+        #contacto {
+            background-color: #c796b4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 15px;
+        }
+
+        #contacto h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        #contacto p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            color: #ebb8e3;
+            font-size: 12px;
+            padding: 15px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="principal">
+
+    <header>
+
+        <div id="logo">
+
+            <h1 class="titulo">
+                La Huellita Panadera
+            </h1>
+
+            <p class="sub-titulo">
+                Hecho con amor para compartir
+            </p>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <ul>
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#historia">Historia</a>
+                </li>
+
+                <li>
+                    <a href="#menu">Menú</a>
+                </li>
+
+                <li>
+                    <a href="#adn">ADN</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section id="slide">
+
+        <div>
+
+            <h2>
+                La Huellita Panadera
+            </h2>
+
+            <p>
+                Hecho con amor para compartir
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="categorias">
+
+
+        <!-- HISTORIA -->
+
+        <article class="uno" id="historia">
+
+            <div class="icono">
+                🐾
+            </div>
+
+            <h2>
+                Nuestra Historia
+            </h2>
+
+            <p class="parrafo">
+
+                La Huellita Panadera nació inspirada en el recuerdo
+                de una mascota muy especial que dejó una huella
+                imborrable en nuestro corazón.
+
+                <br><br>
+
+                Más que una compañía, fue parte de nuestra familia,
+                acompañándonos en momentos de alegría y creando
+                recuerdos que conservamos con mucho cariño.
+
+                <br><br>
+
+                Por eso elegimos una huellita como símbolo de nuestra
+                marca: representa los recuerdos que permanecen para
+                siempre y las pequeñas acciones que dejan grandes
+                huellas.
+
+            </p>
+
+        </article>
+
+        <article class="uno">
+
+            <div class="icono">
+                🍰
+            </div>
+
+            <h2>
+                Nuestro Menú
+            </h2>
+
+            <p class="parrafo">
+
+                En La Huellita Panadera ofrecemos una variedad de
+                productos de panadería y repostería.
+
+                <br><br>
+
+                Encontrarás panes, donas, cuernitos, galletas,
+                cupcakes, cheesecakes, carlotas, pasteles y
+                bebidas.
+
+                <br><br>
+
+                Todos preparados pensando en compartir momentos
+                especiales.
+
+            </p>
+
+            <a href="#menu" class="leer-mas">
+                Ver menú
+            </a>
+
+        </article>
+
+        <article class="uno">
+
+            <div class="icono">
+                🥐
+            </div>
+
+            <h2>
+                Nuestros Productos
+            </h2>
+
+            <p class="parrafo">
+
+                Nuestros productos buscan combinar buen sabor,
+                creatividad y una presentación agradable.
+
+                <br><br>
+
+                Contamos con opciones para disfrutar diariamente
+                y también productos especiales para celebraciones
+                y reuniones.
+
+                <br><br>
+
+                ¡Siempre hay algo dulce para compartir!
+
+            </p>
+
+            <a href="#menu" class="leer-mas">
+                Ver productos
+            </a>
+
+        </article>
+
+
+    </section>
+
+    <section id="menu">
+
+        <h2>
+            Nuestro Menú
+        </h2>
+
+        <p class="subtitulo-menu">
+            Productos preparados con amor para compartir
+        </p>
+
+
+
+        <!-- PANADERIA -->
+
+        <div class="categoria-menu">
+
+            <h3>
+                🥐 Panadería
+            </h3>
+
+            <div class="producto">
+                <span>Dona de chocolate</span>
+                <span class="precio">$0.75</span>
+            </div>
+
+            <div class="producto">
+                <span>Cuernito</span>
+                <span class="precio">$1.50</span>
+            </div>
+
+            <div class="producto">
+                <span>Galletas</span>
+                <span class="precio">$1.50</span>
+            </div>
+
+            <div class="producto">
+                <span>Pan dulce tradicional</span>
+                <span class="precio">$0.50</span>
+            </div>
+
+            <div class="producto">
+                <span>Roles de canela</span>
+                <span class="precio">$1.00</span>
+            </div>
+
+        </div>
+
+
+        <!-- REPOSTERIA -->
+
+        <div class="categoria-menu">
+
+            <h3>
+                🍰 Repostería
+            </h3>
+
+            <div class="producto">
+                <span>Cupcake</span>
+                <span class="precio">$1.25</span>
+            </div>
+
+            <div class="producto">
+                <span>Brownie</span>
+                <span class="precio">$1.50</span>
+            </div>
+
+            <div class="producto">
+                <span>Carlota</span>
+                <span class="precio">$3.00</span>
+            </div>
+
+            <div class="producto">
+                <span>Cheesecake individual</span>
+                <span class="precio">$3.50</span>
+            </div>
+
+            <div class="producto">
+                <span>Galletas decoradas</span>
+                <span class="precio">$1.00</span>
+            </div>
+
+        </div>
+
+        <div class="categoria-menu">
+
+            <h3>
+                🎂 Pasteles
+            </h3>
+
+            <div class="producto">
+                <span>Pastel pequeño</span>
+                <span class="precio">$15.00</span>
+            </div>
+
+            <div class="producto">
+                <span>Pastel mediano</span>
+                <span class="precio">$25.00</span>
+            </div>
+
+            <div class="producto">
+                <span>Pastel personalizado</span>
+                <span class="precio">Desde $30.00</span>
+            </div>
+
+        </div>
+
+        <div class="categoria-menu">
+
+            <h3>
+                ☕ Bebidas
+            </h3>
+
+            <div class="producto">
+                <span>Café americano</span>
+                <span class="precio">$1.00</span>
+            </div>
+
+            <div class="producto">
+                <span>Café con leche</span>
+                <span class="precio">$1.50</span>
+            </div>
+
+            <div class="producto">
+                <span>Chocolate caliente</span>
+                <span class="precio">$1.75</span>
+            </div>
+
+            <div class="producto">
+                <span>Bebidas frías</span>
+                <span class="precio">$1.50</span>
+            </div>
+
+        </div>
+
+    <section id="galeria">
+
+        <h2>
+            Nuestros Productos
+        </h2>
+
+        <p class="subtitulo-galeria">
+            Conoce algunos de nuestros productos
+        </p>
+
+
+        <div class="galeria-productos">
+
+
+            <!-- FOTO 1 -->
+
+            <div class="foto-producto">
+
+                <img src="donas.jpg" alt="Dona de chocolate">
+
+                <h3>
+                    Dona de chocolate
+                </h3>
+
+                <p>
+                    $0.75
+                </p>
+
+            </div>
+
+
+
+            <!-- FOTO 2 -->
+
+            <div class="foto-producto">
+
+                <img src="cuernitos.jpg" alt="Cuernito">
+
+                <h3>
+                    Cuernito
+                </h3>
+
+                <p>
+                    $1.50
+                </p>
+
+            </div>
+
+
+
+            <!-- FOTO 3 -->
+
+            <div class="foto-producto">
+
+                <img src="galletas.jpg" alt="Galletas">
+
+                <h3>
+                    Galletas
+                </h3>
+
+                <p>
+                    $1.50
+                </p>
+
+            </div>
+
+
+
+            <!-- FOTO 4 -->
+
+            <div class="foto-producto">
+
+                <img src="cupcakes.jpg" alt="Cupcake">
+
+                <h3>
+                    Cupcake
+                </h3>
+
+                <p>
+                    $1.25
+                </p>
+
+            </div>
+
+
+
+            <!-- FOTO 5 -->
+
+            <div class="foto-producto">
+
+                <img src="cheesecake.jpg" alt="Cheesecake">
+
+                <h3>
+                    Cheesecake
+                </h3>
+
+                <p>
+                    $3.50
+                </p>
+
+            </div>
+
+
+
+            <div class="foto-producto">
+
+                <img src="pasteles.jpg" alt="Pastel personalizado">
+
+                <h3>
+                    Pastel personalizado
+                </h3>
+                <p>
+                    Desde $30.00
+                </p>
+      </div>
+
+        </div>
+    </section>
+
+
+    </section>
+
+    <section id="info">
+
+
+        <article id="izq">
+
+            <h2 id="adn">
+                Nuestro ADN de Marca
+           </h2>
+
+
+            <div class="adn">
+
+                <h3>
+                    Misión
+                </h3>
+
+                <p class="parrafo">
+
+                    Elaborar productos de panadería y repostería
+                    con ingredientes de calidad, ofreciendo sabores
+                    únicos y creando experiencias llenas de cariño
+                    para compartir con familiares y amigos.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="adn">
+
+                <h3>
+                    Visión
+                </h3>
+
+                <p class="parrafo">
+
+                    Ser una bakery reconocida por su creatividad,
+                    calidad y el amor presente en cada producto,
+                    convirtiéndonos en una marca que deje una
+                    huella especial en nuestros clientes.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="adn">
+
+                <h3>
+                    Valores
+                </h3>
+
+                <p class="parrafo">
+
+                    <b>Amor:</b>
+                    ponemos cariño y dedicación en cada producto.
+
+                    <br><br>
+
+                    <b>Calidad:</b>
+                    buscamos ofrecer productos preparados
+                    cuidadosamente.
+
+                    <br><br>
+
+                    <b>Creatividad:</b>
+                    creamos productos y presentaciones especiales.
+
+                    <br><br>
+
+                    <b>Compromiso:</b>
+                    nos esforzamos por brindar una buena experiencia
+                    a nuestros clientes.
+
+                </p>
+
+            </div>
+
+
+        </article>
+
+        <aside id="der">
+
+            <h2>
+                Sobre nuestra bakery
+            </h2>
+
+            <div class="video-box">
+
+                <p>
+                    Aquí puedes colocar un video de
+                    La Huellita Panadera o un video
+                    relacionado con nuestros productos.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+    </section>
+
+    <section id="contacto">
+
+        <h2>
+            Contáctanos
+        </h2>
+
+        <p>
+
+            ¿Quieres realizar un pedido?
+
+            <br>
+
+            Escríbenos y disfruta de nuestros productos
+            hechos con amor. 
+            
+            <br> instagram: @lahuellitapanadera <br> whatsApp: +503 7863 7629 <br>
+
+            <b>La Huellita Panadera</b>
+
+            <br>
+
+            "Hecho con amor para compartir"
+
+        </p>
+
+    </section>
+
+    <footer>
+
+        © 2026 La Huellita Panadera
+        <br>
+        Hecho con amor para compartir
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
